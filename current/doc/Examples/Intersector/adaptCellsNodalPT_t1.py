@@ -1,4 +1,4 @@
-# - adapts a cells with respect to b points (PyTree) -
+# - adaptCellsNodal (pyTree) -
 import Intersector.PyTree as XOR
 import Converter.PyTree as C
 import Converter.Internal as I
@@ -8,8 +8,8 @@ import KCore.test as test
 
 z = G.cartHexa((0.,0.,0.), (0.1,0.1,0.1), (5,5,5))
 zTH4 = C.convertArray2Tetra(z, split='withBarycenters')
-z = C.convertArray2NGon(z); z = G.close(z)
-zTH4 = C.convertArray2NGon(zTH4); zTH4 = G.close(zTH4)
+z = C.convertArray2NGon(z)
+zTH4 = C.convertArray2NGon(zTH4)
 #C.convertPyTree2File([z], 'a.cgns')
 
 n = C.getNPts(z)

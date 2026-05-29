@@ -1,11 +1,10 @@
-# - adapt the bounding box of a point cloud (array) -
-
+# - adaptBox (pyTree) -
 import Converter.PyTree as C
 import Generator.PyTree as G
 import Intersector.PyTree as XOR
 
 a = G.cartHexa((0.,0.,0.), (0.1,0.1,0.1), (5,5,5))
-a = C.convertArray2NGon(a); a = G.close(a)
+a = C.convertArray2NGon(a)
 
 m = XOR.adaptBox(a, box_ratio=10.)
 

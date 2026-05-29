@@ -1,10 +1,10 @@
-# - adapts a cells with respect to b points (PyTree) -
+# - adaptCells (pyTree) -
 import Intersector.PyTree as XOR
 import Converter.PyTree as C
 import Generator.PyTree as G
 
 a = G.cartHexa((0.,0.,0.), (0.1,0.1,0.1), (5,5,5))
-a = C.convertArray2NGon(a); a = G.close(a)
+a = C.convertArray2NGon(a)
 #C.convertPyTree2File(a, 'a.cgns')
 b = G.cartHexa((0.,0.,0.), (0.005,0.005,0.005), (5,5,5))
 #C.convertPyTree2File(b, 'b.cgns')

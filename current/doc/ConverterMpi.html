@@ -6,7 +6,7 @@
     <meta charset="ASCII" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Converter.Mpi: distributed pyTree services &#8212; Converter 4.1 documentation</title>
+    <title>Converter.Mpi: distributed pyTree services &#8212; Converter 4.2 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/classic.css" />
     
@@ -29,7 +29,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="Converter.html">Converter 4.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="Converter.html">Converter 4.2 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Converter.Mpi: distributed pyTree services</a></li> 
       </ul>
     </div>  
@@ -564,7 +564,7 @@ You can use setProc or Distributor2 to create the .Solver#Param/proc node.</p>
 <span class="n">t</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">newPyTree</span><span class="p">([</span><span class="s1">&#39;Base&#39;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">])</span>
 <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">dic</span><span class="p">)</span> <span class="o">=</span> <span class="n">Distributor2</span><span class="o">.</span><span class="n">distribute</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">NProc</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s1">&#39;fast&#39;</span><span class="p">)</span>
 
-<span class="n">zones</span> <span class="o">=</span> <span class="n">Internal</span><span class="o">.</span><span class="n">getNodesFromType</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="s1">&#39;Zone_t&#39;</span><span class="p">)</span>
+<span class="n">zones</span> <span class="o">=</span> <span class="n">Internal</span><span class="o">.</span><span class="n">getZones</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">zones</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39; -&gt; &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">Cmpi</span><span class="o">.</span><span class="n">getProc</span><span class="p">(</span><span class="n">z</span><span class="p">)))</span>
 <span class="c1">#&gt;&gt; cart -&gt; 0</span>
 <span class="c1">#&gt;&gt; cart.0 -&gt; 1</span>
@@ -1125,7 +1125,7 @@ function resizeFunction() {
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="Converter.html">Converter 4.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="Converter.html">Converter 4.2 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Converter.Mpi: distributed pyTree services</a></li> 
       </ul>
     </div>

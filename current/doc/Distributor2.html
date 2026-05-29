@@ -6,7 +6,7 @@
     <meta charset="ASCII" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Distributor2: distribution of grids on processors &#8212; Distributor2 4.1 documentation</title>
+    <title>Distributor2: distribution of grids on processors &#8212; Distributor2 4.2 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/classic.css" />
     
@@ -29,7 +29,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">Distributor2 4.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="#">Distributor2 4.2 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Distributor2: distribution of grids on processors</a></li> 
       </ul>
     </div>  
@@ -530,7 +530,7 @@ a and returns None.</p>
 <span class="n">D2mpi</span><span class="o">.</span><span class="n">_redispatch</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 
 <span class="c1"># force toutes les zones sur 0</span>
-<span class="n">zones</span> <span class="o">=</span> <span class="n">Internal</span><span class="o">.</span><span class="n">getNodesFromType</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s1">&#39;Zone_t&#39;</span><span class="p">)</span>
+<span class="n">zones</span> <span class="o">=</span> <span class="n">Internal</span><span class="o">.</span><span class="n">getZones</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">zones</span><span class="p">:</span>
     <span class="n">nodes</span> <span class="o">=</span> <span class="n">Internal</span><span class="o">.</span><span class="n">getNodesFromName</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="s1">&#39;proc&#39;</span><span class="p">)</span>
     <span class="n">Internal</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="n">nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
@@ -738,7 +738,7 @@ function resizeFunction() {
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">Distributor2 4.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="#">Distributor2 4.2 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Distributor2: distribution of grids on processors</a></li> 
       </ul>
     </div>

@@ -6,7 +6,7 @@
     <meta charset="ASCII" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Generator: mesh generation module &#8212; Generator 4.1 documentation</title>
+    <title>Generator: mesh generation module &#8212; Generator 4.2 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/classic.css" />
     
@@ -29,7 +29,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">Generator 4.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="#">Generator 4.2 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Generator: mesh generation module</a></li> 
       </ul>
     </div>  
@@ -184,13 +184,13 @@ containing grid information (coordinates must be defined).</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#Generator.PyTree.adaptMesh" title="Generator.PyTree.adaptMesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator.PyTree.adaptMesh</span></code></a></p></td>
-<td><p></p></td>
+<td><p>Adapt an HEXA conformal mesh.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#Generator.PyTree.createHook4AdaptMesh" title="Generator.PyTree.createHook4AdaptMesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator.PyTree.createHook4AdaptMesh</span></code></a></p></td>
-<td><p></p></td>
+<td><p>Create hook for adaptMesh.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#Generator.PyTree.freeHook4AdaptMesh" title="Generator.PyTree.freeHook4AdaptMesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator.PyTree.freeHook4AdaptMesh</span></code></a></p></td>
-<td><p></p></td>
+<td><p>Free hook for adaptMesh.</p></td>
 </tr>
 </tbody>
 </table>
@@ -315,8 +315,8 @@ containing grid information (coordinates must be defined).</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#Generator.getEdgeRatio" title="Generator.getEdgeRatio"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator.getEdgeRatio</span></code></a></p></td>
 <td><p>Computes the ratio between the max and min lengths of all the edges of cells in an array.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#Generator.getMaxLength" title="Generator.getMaxLength"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator.getMaxLength</span></code></a></p></td>
-<td><p>Computes the max length of all the edges of cells in an array.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Generator.getEdgeLength" title="Generator.getEdgeLength"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator.getEdgeLength</span></code></a></p></td>
+<td><p>Computes the min,max,mean length of all the edges for each cell in an array.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#Generator.checkMesh" title="Generator.checkMesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator.checkMesh</span></code></a></p></td>
 <td><p>Return information on mesh quality.</p></td>
@@ -616,7 +616,7 @@ containing grid information (coordinates must be defined).</p>
 <ul class="simple">
 <li><p><a class="reference external" href="Examples/Generator/cartPentaPT.py">Cartesian penta mesh generation (pyTree)</a>:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - cartPenta (pyTree)-</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - cartPenta (pyTree) -</span>
 <span class="kn">import</span> <span class="nn">Generator.PyTree</span> <span class="k">as</span> <span class="nn">G</span>
 <span class="kn">import</span> <span class="nn">Converter.PyTree</span> <span class="k">as</span> <span class="nn">C</span>
 
@@ -650,7 +650,7 @@ containing grid information (coordinates must be defined).</p>
 <ul class="simple">
 <li><p><a class="reference external" href="Examples/Generator/cartPyra.py">Cartesian pyra mesh generation (array)</a>:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - cartHexa (array) -</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - cartPyra (array) -</span>
 <span class="kn">import</span> <span class="nn">Generator</span> <span class="k">as</span> <span class="nn">G</span>
 <span class="kn">import</span> <span class="nn">Converter</span> <span class="k">as</span> <span class="nn">C</span>
 
@@ -661,7 +661,7 @@ containing grid information (coordinates must be defined).</p>
 <ul class="simple">
 <li><p><a class="reference external" href="Examples/Generator/cartPyraPT.py">Cartesian pyra mesh generation (pyTree)</a>:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - cartPyra (pyTree)-</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - cartPyra (pyTree) -</span>
 <span class="kn">import</span> <span class="nn">Generator.PyTree</span> <span class="k">as</span> <span class="nn">G</span>
 <span class="kn">import</span> <span class="nn">Converter.PyTree</span> <span class="k">as</span> <span class="nn">C</span>
 
@@ -1099,14 +1099,16 @@ box is kept in the final triangulation.</p>
 <hr class="docutils" />
 <dl class="py function">
 <dt class="sig sig-object py" id="Generator.tetraMesher">
-<span class="sig-prename descclassname"><span class="pre">Generator.</span></span><span class="sig-name descname"><span class="pre">tetraMesher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1.</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grading</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optionString</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Create a 3D tetra mesh given a TRI surface defined in a. If the TRI surface has external normals, tetras are filled inside the surface. If algo=0, netgen is used, if algo=1, tetgen is used.</p>
+<span class="sig-prename descclassname"><span class="pre">Generator.</span></span><span class="sig-name descname"><span class="pre">tetraMesher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1.</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quality</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grading</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optionString</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create a 3D tetra mesh given a TRI surface defined in a. If the TRI surface has external normals, tetras are filled inside the surface.
+If algo=0, netgen is used, if algo=1, tetgen is used.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>c</strong> (<em>[</em><em>array</em><em>, </em><em>list</em><em> of </em><em>arrays</em><em>] or </em><em>[</em><em>zone</em><em>, </em><em>list</em><em> of </em><em>zones</em><em>, </em><em>base</em><em>, </em><em>pyTree</em><em>]</em>) &#8211; triangulated surface mesh</p></li>
 <li><p><strong>maxh</strong> (<em>float</em>) &#8211; max cell size of generated mesh [tetgen]</p></li>
-<li><p><strong>grading</strong> (<em>float</em>) &#8211; max adjacent cell ratio [tetgen]</p></li>
+<li><p><strong>quality</strong> (<em>float</em>) &#8211; radius/edge ratio [tetgen]</p></li>
+<li><p><strong>grading</strong> (<em>float</em>) &#8211; max adjacent cell ratio [netgen]</p></li>
 <li><p><strong>algo</strong> (<em>integer</em><em> (</em><em>0</em><em> or </em><em>1</em><em>)</em>) &#8211; choice parameter between netgen and tetgen</p></li>
 <li><p><strong>optionString</strong> (<em>string</em>) &#8211; string of options identical to tetgen [tetgen]</p></li>
 </ul>
@@ -1189,7 +1191,8 @@ TRI mesh is built from imin, jmin, diag boundaries. Each boundary is a structure
 <ul class="simple">
 <li><p><a class="reference external" href="Examples/Generator/TFI.py">TFI mesh generation (array)</a>:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - TFI 2D structured (array)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - TFI (array) -</span>
+<span class="c1"># - TFI 2D structured (array)</span>
 <span class="c1"># - TFI 3D structured (array)</span>
 <span class="c1"># - TFI TRI (array)</span>
 <span class="kn">import</span> <span class="nn">Converter</span> <span class="k">as</span> <span class="nn">C</span>
@@ -1317,7 +1320,7 @@ TRI mesh is built from imin, jmin, diag boundaries. Each boundary is a structure
 <ul class="simple">
 <li><p><a class="reference external" href="Examples/Generator/TFITri.py">TFI structured mesh generation between three curves (array)</a>:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - TFITri (array)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - TFITri (array) -</span>
 <span class="kn">import</span> <span class="nn">Converter</span> <span class="k">as</span> <span class="nn">C</span>
 <span class="kn">import</span> <span class="nn">Generator</span> <span class="k">as</span> <span class="nn">G</span>
 <span class="kn">import</span> <span class="nn">Geom</span> <span class="k">as</span> <span class="nn">D</span>
@@ -1335,7 +1338,7 @@ TRI mesh is built from imin, jmin, diag boundaries. Each boundary is a structure
 <ul class="simple">
 <li><p><a class="reference external" href="Examples/Generator/TFITriPT.py">TFI structured mesh generation between three curves (pyTree)</a>:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - TFITri (pyTree)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - TFITri (pyTree) -</span>
 <span class="kn">import</span> <span class="nn">Converter.PyTree</span> <span class="k">as</span> <span class="nn">C</span>
 <span class="kn">import</span> <span class="nn">Generator.PyTree</span> <span class="k">as</span> <span class="nn">G</span>
 <span class="kn">import</span> <span class="nn">Geom.PyTree</span> <span class="k">as</span> <span class="nn">D</span>
@@ -1521,7 +1524,7 @@ N1, the number of points of a1 and N2, the number of points of a2 must be odd.</
 <ul class="simple">
 <li><p><a class="reference external" href="Examples/Generator/TFIStar.py">TFI structured mesh generation of a set of curves (array)</a>:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - TFIStar (array)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - TFIStar (array) -</span>
 <span class="kn">import</span> <span class="nn">Converter</span> <span class="k">as</span> <span class="nn">C</span>
 <span class="kn">import</span> <span class="nn">Generator</span> <span class="k">as</span> <span class="nn">G</span>
 <span class="kn">import</span> <span class="nn">Geom</span> <span class="k">as</span> <span class="nn">D</span>
@@ -1542,7 +1545,7 @@ N1, the number of points of a1 and N2, the number of points of a2 must be odd.</
 <ul class="simple">
 <li><p><a class="reference external" href="Examples/Generator/TFIStarPT.py">TFI structured mesh generation of a set of curves (pyTree)</a>:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - TFIStar (pyTree)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - TFIStar (pyTree) -</span>
 <span class="kn">import</span> <span class="nn">Converter.PyTree</span> <span class="k">as</span> <span class="nn">C</span>
 <span class="kn">import</span> <span class="nn">Generator.PyTree</span> <span class="k">as</span> <span class="nn">G</span>
 <span class="kn">import</span> <span class="nn">Geom.PyTree</span> <span class="k">as</span> <span class="nn">D</span>
@@ -1891,7 +1894,7 @@ In the pyTree version, it returns a list [zones,hs,densities], where zones is a 
 <ul class="simple">
 <li><p><a class="reference external" href="Examples/Generator/surfaceWalk.py">2D mesh extrusion from a curve and walking on a surface (array)</a>:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - surfaceWalk (array)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - surfaceWalk (array) -</span>
 <span class="kn">import</span> <span class="nn">Converter</span> <span class="k">as</span> <span class="nn">C</span>
 <span class="kn">import</span> <span class="nn">Geom</span> <span class="k">as</span> <span class="nn">D</span>
 <span class="kn">import</span> <span class="nn">Transform</span> <span class="k">as</span> <span class="nn">T</span>
@@ -1918,7 +1921,7 @@ In the pyTree version, it returns a list [zones,hs,densities], where zones is a 
 <ul class="simple">
 <li><p><a class="reference external" href="Examples/Generator/surfaceWalkPT.py">2D mesh extrusion from a curve and walking on a surface (pyTree)</a>:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - surfaceWalk (pyTree)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - surfaceWalk (pyTree) -</span>
 <span class="kn">import</span> <span class="nn">Converter.PyTree</span> <span class="k">as</span> <span class="nn">C</span>
 <span class="kn">import</span> <span class="nn">Geom.PyTree</span>  <span class="k">as</span> <span class="nn">D</span>
 <span class="kn">import</span> <span class="nn">Transform.PyTree</span>  <span class="k">as</span> <span class="nn">T</span>
@@ -1996,7 +1999,7 @@ In the pyTree version, it returns a list [zones,hs,densities], where zones is a 
 <ul class="simple">
 <li><p><a class="reference external" href="Examples/Generator/collarMeshPT.py">3D collar mesh between two surfaces (pyTree)</a>:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - collarMesh (pyTree)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - collarMesh (pyTree) -</span>
 <span class="kn">import</span> <span class="nn">Converter.PyTree</span> <span class="k">as</span> <span class="nn">C</span>
 <span class="kn">import</span> <span class="nn">Geom.PyTree</span> <span class="k">as</span> <span class="nn">D</span>
 <span class="kn">import</span> <span class="nn">Transform.PyTree</span> <span class="k">as</span> <span class="nn">T</span>
@@ -2526,7 +2529,7 @@ cleaned (removal of unreferenced and duplicated vertices, multiply-defined or to
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>modified reference copy of t</p>
+<dd class="field-even"><p>modified reference copy of a</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>array or pyTree</p>
@@ -2561,6 +2564,97 @@ cleaned (removal of unreferenced and duplicated vertices, multiply-defined or to
 <span class="n">t</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">newPyTree</span><span class="p">([</span><span class="s1">&#39;Base&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">,</span><span class="n">a3</span><span class="p">,</span><span class="n">a4</span><span class="p">,</span><span class="n">a5</span><span class="p">])</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mf">1.e-1</span><span class="p">)</span>
 <span class="n">C</span><span class="o">.</span><span class="n">convertPyTree2File</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="s1">&#39;out.cgns&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="py function">
+<dt class="sig sig-object py" id="Generator.rmOrphans">
+<span class="sig-prename descclassname"><span class="pre">Generator.</span></span><span class="sig-name descname"><span class="pre">rmOrphans</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Remove orphan vertices from an unstructured mesh defined by array a.</p>
+<p>Exists also as in place version (_rmOrphans) that modifies a and returns None.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>a</strong> (<em>array</em><em> or </em><em>pyTree</em>) &#8211; input mesh</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>modified reference copy of a</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>array or pyTree</p>
+</dd>
+</dl>
+<p><em>Example of use:</em></p>
+<ul class="simple">
+<li><p><a class="reference external" href="Examples/Generator/rmOrphansPT.py">Mesh closing (pyTree)</a>:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - rmOrphans (pyTree) -</span>
+<span class="kn">import</span> <span class="nn">Converter.PyTree</span> <span class="k">as</span> <span class="nn">C</span>
+<span class="kn">import</span> <span class="nn">Converter.Internal</span> <span class="k">as</span> <span class="nn">Internal</span>
+<span class="kn">import</span> <span class="nn">Generator.PyTree</span> <span class="k">as</span> <span class="nn">G</span>
+
+<span class="n">insertPos</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">91</span><span class="p">]</span>
+<span class="n">norphans</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">insertPos</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">_addOrphans</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">api</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+
+    <span class="n">gc</span> <span class="o">=</span> <span class="n">Internal</span><span class="o">.</span><span class="n">getNodeFromType2</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="s1">&#39;GridCoordinates_t&#39;</span><span class="p">)</span>
+    <span class="n">n_x</span> <span class="o">=</span> <span class="n">Internal</span><span class="o">.</span><span class="n">getNodeFromName1</span><span class="p">(</span><span class="n">gc</span><span class="p">,</span> <span class="s1">&#39;CoordinateX&#39;</span><span class="p">)</span>
+    <span class="n">n_y</span> <span class="o">=</span> <span class="n">Internal</span><span class="o">.</span><span class="n">getNodeFromName1</span><span class="p">(</span><span class="n">gc</span><span class="p">,</span> <span class="s1">&#39;CoordinateY&#39;</span><span class="p">)</span>
+    <span class="n">n_z</span> <span class="o">=</span> <span class="n">Internal</span><span class="o">.</span><span class="n">getNodeFromName1</span><span class="p">(</span><span class="n">gc</span><span class="p">,</span> <span class="s1">&#39;CoordinateZ&#39;</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">n_x</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span> <span class="n">y</span> <span class="o">=</span> <span class="n">n_y</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span> <span class="n">z</span> <span class="o">=</span> <span class="n">n_z</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">ngon</span> <span class="o">=</span> <span class="n">Internal</span><span class="o">.</span><span class="n">getNGonNode</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">ec</span> <span class="o">=</span> <span class="n">Internal</span><span class="o">.</span><span class="n">getNodeFromName1</span><span class="p">(</span><span class="n">ngon</span><span class="p">,</span> <span class="s1">&#39;ElementConnectivity&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">npts</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">npts2</span> <span class="o">=</span> <span class="n">npts</span> <span class="o">+</span> <span class="n">norphans</span>
+    <span class="n">indir</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">npts2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">Internal</span><span class="o">.</span><span class="n">E_NpyInt</span><span class="p">)</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">npts2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+    <span class="n">mask</span><span class="p">[</span><span class="n">insertPos</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">indir</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">npts</span><span class="p">)</span>
+    <span class="n">origPts</span> <span class="o">=</span> <span class="n">indir</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+
+    <span class="c1"># New coords: copy existing coords and add new ones</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">npts2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+    <span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">npts2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">y</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+    <span class="n">z2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">npts2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">z</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+
+    <span class="n">x2</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">indir</span><span class="p">[</span><span class="n">mask</span><span class="p">]]</span>
+    <span class="n">y2</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">indir</span><span class="p">[</span><span class="n">mask</span><span class="p">]]</span>
+    <span class="n">z2</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">z</span><span class="p">[</span><span class="n">indir</span><span class="p">[</span><span class="n">mask</span><span class="p">]]</span>
+
+    <span class="n">x2</span><span class="p">[</span><span class="o">~</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">11.</span><span class="p">,</span> <span class="n">norphans</span><span class="p">)</span>
+    <span class="n">y2</span><span class="p">[</span><span class="o">~</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">11.</span><span class="p">,</span> <span class="n">norphans</span><span class="p">)</span>
+    <span class="n">z2</span><span class="p">[</span><span class="o">~</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">11.</span><span class="p">,</span> <span class="n">norphans</span><span class="p">)</span>
+
+    <span class="n">Internal</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="n">n_x</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span>
+    <span class="n">Internal</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="n">n_y</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
+    <span class="n">Internal</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="n">n_z</span><span class="p">,</span> <span class="n">z2</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">api</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">ec</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">ec</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
+            <span class="n">nvert</span> <span class="o">=</span> <span class="n">ec</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">mask</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="n">nvert</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="n">nvert</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">ec</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+
+    <span class="n">invIndir</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">npts</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">Internal</span><span class="o">.</span><span class="n">E_NpyInt</span><span class="p">)</span>
+    <span class="n">invIndir</span><span class="p">[</span><span class="n">indir</span><span class="p">[</span><span class="n">origPts</span><span class="p">]]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flatnonzero</span><span class="p">(</span><span class="n">origPts</span><span class="p">)</span>
+    <span class="n">ec</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">invIndir</span><span class="p">[</span><span class="n">ec</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">norphans</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">cartNGon</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="n">api</span><span class="o">=</span><span class="n">api</span><span class="p">)</span>
+<span class="n">_addOrphans</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">api</span><span class="o">=</span><span class="n">api</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">_rmOrphans</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">C</span><span class="o">.</span><span class="n">convertPyTree2File</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s1">&#39;out.cgns&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -3019,7 +3113,7 @@ cleaned (removal of unreferenced and duplicated vertices, multiply-defined or to
 <ul class="simple">
 <li><p><a class="reference external" href="Examples/Generator/growPT.py">Extrusion of one layer from a surface mesh (pyTree)</a>:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - grow (pyTree)-</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - grow (pyTree) -</span>
 <span class="kn">import</span> <span class="nn">Converter.PyTree</span> <span class="k">as</span> <span class="nn">C</span>
 <span class="kn">import</span> <span class="nn">Converter.Internal</span> <span class="k">as</span> <span class="nn">Internal</span>
 <span class="kn">import</span> <span class="nn">Generator.PyTree</span> <span class="k">as</span> <span class="nn">G</span>
@@ -3920,7 +4014,7 @@ through given hardPoints (NODES). If refine=0, no inside points are added.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="Examples/Generator/CEBBIntersectionPT.py">Intersection by Cartesian elements bounding box between two meshes (pyTree)</a>:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - CEBBIntersection (pyTree)-</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - CEBBIntersection (pyTree) -</span>
 <span class="kn">import</span> <span class="nn">Generator.PyTree</span> <span class="k">as</span> <span class="nn">G</span>
 <span class="kn">import</span> <span class="nn">Transform.PyTree</span> <span class="k">as</span> <span class="nn">T</span>
 
@@ -4037,7 +4131,7 @@ through given hardPoints (NODES). If refine=0, no inside points are added.</p>
 <hr class="docutils" />
 <dl class="py function">
 <dt class="sig sig-object py" id="Generator.getVolumeMap">
-<span class="sig-prename descclassname"><span class="pre">Generator.</span></span><span class="sig-name descname"><span class="pre">getVolumeMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-12</span></span></em><span class="sig-paren">)</span></dt>
+<span class="sig-prename descclassname"><span class="pre">Generator.</span></span><span class="sig-name descname"><span class="pre">getVolumeMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Return the volume field of an array. Volume is located at centers of cells.</p>
 <p>Exists also as in place version (_getVolumeMap) that modifies a and returns None.</p>
 <dl class="field-list simple">
@@ -4045,7 +4139,6 @@ through given hardPoints (NODES). If refine=0, no inside points are added.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>a</strong> (<em>array</em><em> or </em><em>pyTree</em>) &#8211; input volume or surface mesh</p></li>
 <li><p><strong>method</strong> (<em>int</em>) &#8211; method of volumes computation (0 or 1). method = 1 is usually more robust on NGons</p></li>
-<li><p><strong>tol</strong> (<em>float</em>) &#8211; tolerance used within internal routines when method = 1</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -4082,7 +4175,7 @@ through given hardPoints (NODES). If refine=0, no inside points are added.</p>
 
 <span class="c1"># method=1</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">convertArray2NGon</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">getVolumeMap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">getVolumeMap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">C</span><span class="o">.</span><span class="n">convertPyTree2File</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s1">&#39;out2.cgns&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -4289,7 +4382,7 @@ Exists also as parallel distributed version (G.Mpi.getRegularityMap).</p>
 <ul class="simple">
 <li><p><a class="reference external" href="Examples/Generator/getRegularityMapPT.py">Computation of cells regularity with respect to volumes (pyTree)</a>:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - getRegularityMapPT (pyTree) -</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - getRegularityMap (pyTree) -</span>
 <span class="kn">import</span> <span class="nn">Generator.PyTree</span> <span class="k">as</span> <span class="nn">G</span>
 <span class="kn">import</span> <span class="nn">Converter.PyTree</span> <span class="k">as</span> <span class="nn">C</span>
 
@@ -4376,7 +4469,7 @@ Exists also as parallel distributed version (G.Mpi.getAngleRegularityMap).</p>
 <ul class="simple">
 <li><p><a class="reference external" href="Examples/Generator/getTriQualityMap.py">Computation of triangles quality (array)</a>:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - getTriQualitylityMap (array) -</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - getTriQualityMap (array) -</span>
 <span class="kn">import</span> <span class="nn">Generator</span> <span class="k">as</span> <span class="nn">G</span>
 <span class="kn">import</span> <span class="nn">Converter</span> <span class="k">as</span> <span class="nn">C</span>
 <span class="kn">import</span> <span class="nn">Geom</span> <span class="k">as</span> <span class="nn">D</span>
@@ -4391,7 +4484,7 @@ Exists also as parallel distributed version (G.Mpi.getAngleRegularityMap).</p>
 <ul class="simple">
 <li><p><a class="reference external" href="Examples/Generator/getTriQualityMapPT.py">Computation of triangles quality (pyTree)</a>:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - getTriQualitylityMap (PyTree) -</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - getTriQualityMap (pyTree) -</span>
 <span class="kn">import</span> <span class="nn">Generator.PyTree</span> <span class="k">as</span> <span class="nn">G</span>
 <span class="kn">import</span> <span class="nn">Converter.PyTree</span> <span class="k">as</span> <span class="nn">C</span>
 <span class="kn">import</span> <span class="nn">Geom.PyTree</span> <span class="k">as</span> <span class="nn">D</span>
@@ -4574,7 +4667,7 @@ Exists also as parallel distributed version (G.Mpi.getAngleRegularityMap).</p>
 <ul class="simple">
 <li><p><a class="reference external" href="Examples/Generator/getEdgeRatio.py">Computation of maximum edge ratio of cells (array)</a>:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - getEdgeRatio(array) -</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - getEdgeRatio (array) -</span>
 <span class="kn">import</span> <span class="nn">Generator</span> <span class="k">as</span> <span class="nn">G</span>
 <span class="kn">import</span> <span class="nn">Converter</span> <span class="k">as</span> <span class="nn">C</span>
 
@@ -4588,7 +4681,7 @@ Exists also as parallel distributed version (G.Mpi.getAngleRegularityMap).</p>
 <ul class="simple">
 <li><p><a class="reference external" href="Examples/Generator/getEdgeRatioPT.py">Computation of maximum edge ratio of cells (pyTree)</a>:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - getEdgeRatio(pyTree) -</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - getEdgeRatio (pyTree) -</span>
 <span class="kn">import</span> <span class="nn">Generator.PyTree</span> <span class="k">as</span> <span class="nn">G</span>
 <span class="kn">import</span> <span class="nn">Converter.PyTree</span> <span class="k">as</span> <span class="nn">C</span>
 
@@ -4602,13 +4695,17 @@ Exists also as parallel distributed version (G.Mpi.getAngleRegularityMap).</p>
 
 <hr class="docutils" />
 <dl class="py function">
-<dt class="sig sig-object py" id="Generator.getMaxLength">
-<span class="sig-prename descclassname"><span class="pre">Generator.</span></span><span class="sig-name descname"><span class="pre">getMaxLength</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Return the length of the longer edge of each cell.</p>
-<p>Exists also as in place version (_getMaxLength) that modifies a and returns None.</p>
+<dt class="sig sig-object py" id="Generator.getEdgeLength">
+<span class="sig-prename descclassname"><span class="pre">Generator.</span></span><span class="sig-name descname"><span class="pre">getEdgeLength</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Return the length of the max, min, ratio, mean of edges for each cell.</p>
+<p>Exists also as in place version (_getEdgeLength) that modifies a and returns None.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>a</strong> (<em>array</em><em> or </em><em>pyTree</em>) &#8211; input mesh</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>array</em><em> or </em><em>pyTree</em>) &#8211; input mesh</p></li>
+<li><p><strong>type</strong> (<em>int</em>) &#8211; max (0), min (1), ratio (2), mean (3) of edge length of cell</p></li>
+<li><p><strong>dim</strong> (<em>1</em><em>, </em><em>2</em><em>, </em><em>3</em>) &#8211; problem dimension</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>modified reference copy of a</p>
@@ -4619,29 +4716,29 @@ Exists also as parallel distributed version (G.Mpi.getAngleRegularityMap).</p>
 </dl>
 <p><em>Example of use:</em></p>
 <ul class="simple">
-<li><p><a class="reference external" href="Examples/Generator/getMaxLength.py">Computation of maximum edge length of cells (array)</a>:</p></li>
+<li><p><a class="reference external" href="Examples/Generator/getEdgeLength.py">Computation of maximum edge length of cells (array)</a>:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - getMaxLength(array) -</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - getEdgeLength (array) -</span>
 <span class="kn">import</span> <span class="nn">Generator</span> <span class="k">as</span> <span class="nn">G</span>
 <span class="kn">import</span> <span class="nn">Converter</span> <span class="k">as</span> <span class="nn">C</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">cart</span><span class="p">((</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">),</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">11</span><span class="p">))</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">enforcePlusX</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mf">1e-6</span><span class="p">,(</span><span class="mi">5</span><span class="p">,</span><span class="mi">50</span><span class="p">))</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">getMaxLength</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">enforcePlusX</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mf">1e-6</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">50</span><span class="p">))</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">getEdgeLength</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">center2Node</span><span class="p">(</span><span class="n">r</span><span class="p">);</span> <span class="n">r</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">addVars</span><span class="p">([</span><span class="n">a</span><span class="p">,</span><span class="n">r</span><span class="p">])</span>
-<span class="n">C</span><span class="o">.</span><span class="n">convertArrays2File</span><span class="p">([</span><span class="n">r</span><span class="p">],</span> <span class="s2">&quot;out.plt&quot;</span><span class="p">)</span>
+<span class="n">C</span><span class="o">.</span><span class="n">convertArrays2File</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="s2">&quot;out.plt&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><a class="reference external" href="Examples/Generator/getMaxLengthPT.py">Computation of maximum edge length of cells (pyTree)</a>:</p></li>
+<li><p><a class="reference external" href="Examples/Generator/getEdgeLengthPT.py">Computation of maximum edge length of cells (pyTree)</a>:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - getMaxLength(pyTree) -</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - getEdgeLength (pyTree) -</span>
 <span class="kn">import</span> <span class="nn">Generator.PyTree</span> <span class="k">as</span> <span class="nn">G</span>
 <span class="kn">import</span> <span class="nn">Converter.PyTree</span> <span class="k">as</span> <span class="nn">C</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">cart</span><span class="p">((</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">),</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">11</span><span class="p">))</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">enforcePlusX</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mf">1e-6</span><span class="p">,(</span><span class="mi">5</span><span class="p">,</span><span class="mi">50</span><span class="p">))</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">getMaxLength</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">enforcePlusX</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mf">1e-6</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">50</span><span class="p">))</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">getEdgeLength</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">C</span><span class="o">.</span><span class="n">convertPyTree2File</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s2">&quot;out.cgns&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -4899,7 +4996,7 @@ Exists also for Y and Z directions: Generator.enforceMoinsY, Generator.enforcePl
 <ul class="simple">
 <li><p><a class="reference external" href="Examples/Generator/enforceLinePT.py">Distribution refinement around a line (pyTree)</a>:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - enforceLine (pyTree)-</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - enforceLine (pyTree) -</span>
 <span class="kn">import</span> <span class="nn">Generator.PyTree</span> <span class="k">as</span> <span class="nn">G</span>
 <span class="kn">import</span> <span class="nn">Converter.PyTree</span> <span class="k">as</span> <span class="nn">C</span>
 <span class="kn">import</span> <span class="nn">Geom.PyTree</span> <span class="k">as</span> <span class="nn">D</span>
@@ -5067,7 +5164,7 @@ Exists also for Y and Z directions: Generator.enforceMoinsY, Generator.enforcePl
 <ul class="simple">
 <li><p><a class="reference external" href="Examples/Generator/addPointInDistributionPT.py">Point insertion in a distribution (pyTree)</a>:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - addPointInDistribution (pyTree)-</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># - addPointInDistribution (pyTree) -</span>
 <span class="kn">import</span> <span class="nn">Generator.PyTree</span> <span class="k">as</span> <span class="nn">G</span>
 <span class="kn">import</span> <span class="nn">Converter.PyTree</span> <span class="k">as</span> <span class="nn">C</span>
 
@@ -5224,7 +5321,7 @@ function resizeFunction() {
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">Generator 4.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="#">Generator 4.2 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Generator: mesh generation module</a></li> 
       </ul>
     </div>
